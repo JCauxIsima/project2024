@@ -90,5 +90,5 @@ Une fois le projet buildé, deux exécutables sont disponibles :
 En mode concis :
 ```console
 ctest => one test successful
- => UI shows
+.\bin\Debug\TestCompil.exe => UI shows
 ```
