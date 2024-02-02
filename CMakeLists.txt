@@ -1,24 +1,23 @@
 
-CMAKE_MINIMUM_REQUIRED( VERSION 3.16 )
+cmake_minimum_required( VERSION 3.16 )
 
-PROJECT( TestCompil VERSION 1.0.0 )
+project( TestCompil VERSION 1.0.0 )
 
-MESSAGE( STATUS "**** Configuring TestCompil version ${TestCompil_VERSION} ****")
+message( STATUS "**** Configuring ${PROJECT_NAME} version ${PROJECT_VERSION} ****")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_STANDARD_REQUIRED ON )
 
-SET( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wno-deprecated" )
-SET( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unused -Wno-uninitialized" )
+add_compile_options( -Wall -Werror -Wno-deprecated )
 
-SET( EXECUTABLE_OUTPUT_PATH ${TestCompil_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE} )
-SET( LIBRARY_OUTPUT_PATH ${TestCompil_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE} )
+set( EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE} )
+set( LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE} )
 
-SET( CMAKE_AUTOMOC ON )
-SET( CMAKE_AUTORCC ON )
-FIND_PACKAGE( Qt6 REQUIRED COMPONENTS Core Widgets )
+set( CMAKE_AUTOMOC ON )
+set( CMAKE_AUTORCC ON )
+find_package( Qt6 REQUIRED COMPONENTS Core Widgets )
 
 enable_testing()
 
-ADD_SUBDIRECTORY( src )
-ADD_SUBDIRECTORY( test_unit )
+add_subdirectory( src )
+add_subdirectory( test_unit )

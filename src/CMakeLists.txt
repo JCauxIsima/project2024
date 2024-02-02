@@ -1,20 +1,27 @@
 
-# INCLUDE_DIRECTORIES( . FenetrePrincipale module2 )
-INCLUDE_DIRECTORIES( . )
+add_library( base )
 
-MESSAGE( STATUS ${CMAKE_CURRENT_BINARY_DIR} )
+target_sources( base
+  PRIVATE
+    FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp
+)
+target_sources( base
+  PRIVATE
+    module2/module2_fichier1.cpp
+)
 
-SET( FENETRE_PRINCIPALE_SRC FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp )
-SET( MODULE2_SRC module2/module2_fichier1.cpp )
+target_sources( base
+  PRIVATE
+    resources/resource.qrc
+)
 
-ADD_LIBRARY( src
-             ${FENETRE_PRINCIPALE_SRC} ${MODULE2_SRC}
-             resources/resource.qrc
-           )
+# target_include_directories( base . FenetrePrincipale module2 )
+target_include_directories( base
+  PUBLIC "." )
 
-TARGET_LINK_LIBRARIES( src PUBLIC Qt6::Widgets )
+target_link_libraries( base PUBLIC Qt6::Widgets )
 
-ADD_EXECUTABLE( ${PROJECT_NAME}
+add_executable( ${PROJECT_NAME}
                 main.cpp )
 
-TARGET_LINK_LIBRARIES( ${PROJECT_NAME} PRIVATE Qt6::Widgets Qt6::Core )
+target_link_libraries( ${PROJECT_NAME} PRIVATE base Qt6::Widgets Qt6::Core )
