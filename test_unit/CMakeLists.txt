@@ -1,4 +1,6 @@
 
+cmake_policy(SET CMP0135 NEW)
+
 # Copy-paste from http://google.github.io/googletest/quickstart-cmake.html
 
 include(FetchContent)
