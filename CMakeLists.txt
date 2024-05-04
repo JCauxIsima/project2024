@@ -1,7 +1,7 @@
 
 cmake_minimum_required( VERSION 3.16 )
 
-project( TestCompil VERSION 1.0.0 )
+project( NomCool VERSION 1.0.0 )
 
 message( STATUS "**** Configuring ${PROJECT_NAME} version ${PROJECT_VERSION} ****")
 

@@ -1,4 +1,4 @@
-# TestCompil
+# Project2024
 
 ## Setup
 
@@ -83,12 +83,12 @@ Une fois le projet buildé, deux exécutables sont disponibles :
 
   Un test doit être exécuté avec succès.
 
-* L'application graphique exécutable en appelant `.\bin\Debug\TestCompil.exe`.
+* L'application graphique exécutable en appelant `.\bin\Debug\NomCool.exe`.
 
   Une fenêtre vide doit apparaitre et se fermer lors de l'appuie sur la croix.
 
 En mode concis :
 ```console
 ctest => one test successful
-.\bin\Debug\TestCompil.exe => UI shows
+.\bin\Debug\NomCool.exe => UI shows
 ```

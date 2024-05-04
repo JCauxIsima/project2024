@@ -1,5 +1,5 @@
 
-#include <FenetrePrincipale/FenetrePrincipale.hpp>
+#include <gui/MainWindow.hpp>
 
 #include <QApplication>
 #include <QDir>
@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 
 	Q_INIT_RESOURCE(resource);
 
-  TestCompil::FenetrePrincipale::MainWindow fenetre;
+  NomCool::gui::MainWindow fenetre;
   fenetre.show();
 
   return app.exec();

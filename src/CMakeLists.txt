@@ -3,11 +3,11 @@ add_library( base )
 
 target_sources( base
   PRIVATE
-    FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp
+    gui/MainWindow.cpp gui/Interrogation.cpp gui/PreviousResult.cpp
 )
 target_sources( base
   PRIVATE
-    module2/module2_fichier1.cpp
+    data/Interrogation.cpp data/Result.cpp
 )
 
 target_sources( base
