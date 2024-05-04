@@ -15,7 +15,6 @@ target_sources( base
     resources/resource.qrc
 )
 
-# target_include_directories( base . FenetrePrincipale module2 )
 target_include_directories( base
   PUBLIC "." )
 
